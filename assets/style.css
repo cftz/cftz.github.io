@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "Work Sans";
+  src: url("fonts/WorkSans-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  color-scheme: light;
+  --paper: #f4f0e6;
+  --ink: #262b25;
+  --muted: #555e51;
+  --line: #c9cbbe;
+  --green: #334c3c;
+  --light: #e4e8da;
+  font-family: "Work Sans", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+p, h1, h2 { margin: 0; }
+a { color: inherit; text-decoration: none; font-weight: 500; }
+a:hover, a:focus-visible { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.container { width: min(1216px, calc(100% - clamp(64px, 15.56vw, 224px))); margin-inline: auto; }
+.skip-link { display: inline-flex; align-items: center; min-height: 44px; position: absolute; z-index: 1; left: 24px; top: 8px; padding: 12px; background: var(--paper); transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
+.header { min-height: 96px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 16px 40px; flex-wrap: wrap; padding-block: 20px; }
+.wordmark { font-size: 1.625rem; font-weight: 600; line-height: 1.2; }
+.header a, .footer a { display: inline-flex; align-items: center; min-height: 44px; }
+nav { display: flex; flex-wrap: wrap; gap: 8px 48px; }
+nav a, .footer a { font-size: 1rem; line-height: 1.5; }
+.hero { padding-block: 72px 140px; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 64px; align-items: start; }
+.eyebrow { color: var(--muted); font-size: .875rem; line-height: 1.4; margin-bottom: 24px; }
+h1 { font-size: clamp(3.5rem, 5.278vw, 4.75rem); font-weight: 500; line-height: 1.06; letter-spacing: -.025em; }
+.hero-body { color: var(--muted); font-size: 1.25rem; line-height: 1.55; max-width: 594px; margin-top: 44px; }
+.cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 216px; min-height: 52px; padding: 12px 21px; border-radius: 3px; background: var(--green); color: var(--paper); font-size: 1.0625rem; line-height: 1.4; margin-top: 40px; }
+.cta:hover, .cta:active { background: var(--ink); }
+.threshold { display: block; width: 100%; max-width: 359px; height: auto; margin-top: 34px; justify-self: end; }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+h2 { font-size: 2.5rem; font-weight: 500; line-height: 1.15; letter-spacing: -.015em; }
+.split p { color: var(--muted); font-size: 1.4375rem; line-height: 1.5; max-width: 590px; }
+.about { border-top: 1px solid var(--line); padding-block: 40px 152px; }
+.approach { background: var(--light); padding-block: 40px 140px; }
+.footer { padding-block: 96px 80px; display: flex; justify-content: space-between; align-items: start; gap: 32px; }
+.footer-wordmark { font-size: 1.375rem; font-weight: 600; line-height: 1.2; }
+.tagline { color: var(--muted); font-size: 1rem; line-height: 1.5; margin-top: 12px; }
+@media (max-width: 959px) {
+  .container { width: calc(100% - 64px); max-width: 640px; }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 56px 48px; }
+  h1 { font-size: 3.5rem; }
+  .threshold { justify-self: start; margin: 0; }
+  .split { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .about { padding-block: 40px 56px; }
+  .approach { padding-block: 40px 56px; }
+  .footer { padding-block: 48px; flex-direction: column; gap: 24px; }
+}
+@media (max-width: 599px) {
+  .container { width: calc(100% - 48px); }
+  .header { align-items: start; flex-direction: column; gap: 4px; padding-block: 20px 16px; }
+  .wordmark { font-size: 1.4375rem; }
+  nav { gap: 8px 32px; }
+  .hero { padding-top: 40px; }
+  h1 { font-size: clamp(2rem, calc(11.4286vw - .2857rem), 2.5rem); }
+  .hero-body { font-size: 1.125rem; margin-top: 28px; }
+  .cta { margin-top: 36px; min-width: min(216px, 100%); }
+  h2 { font-size: 1.8125rem; }
+  .split p { font-size: 1.125rem; }
+}
+@media (max-width: 319px) {
+  h1 { font-size: 1.8rem; overflow-wrap: anywhere; }
+  h2, .wordmark, .footer-wordmark { overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
